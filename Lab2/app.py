@@ -19,13 +19,13 @@ def index():
 @app.route("/next")
 def next_img():
     global current_index
-    current_index += 1
+    current_index = (current_index + 1) % len(images)
     return redirect(url_for("index"))
 
 @app.route("/prev")
 def prev_img():
     global current_index
-    current_index -= 1
+    current_index = (current_index - 1) % len(images)
     return redirect(url_for("index"))
 
 if __name__ == "__main__":
