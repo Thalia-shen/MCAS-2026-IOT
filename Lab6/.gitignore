@@ -1,0 +1,12 @@
+# API Key 與本機環境變數
+.env
+
+# Python 虛擬環境
+venv/
+
+# Python 快取
+__pycache__/
+*.pyc
+
+# macOS 系統檔案
+.DS_Store

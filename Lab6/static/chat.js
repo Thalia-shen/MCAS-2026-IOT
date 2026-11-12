@@ -78,6 +78,7 @@ form.addEventListener(
                         headers: {
                             "Content-Type":
                                 "application/json",
+                                "ngrok-skip-browser-warning": "true",
                         },
 
                         body:
@@ -136,7 +137,10 @@ resetButton.addEventListener(
             await fetch(
                 "/api/reset",
                 {
-                    method: "POST"
+                    method: "POST",
+                    headers: {
+                        "ngrok-skip-browser-warning": "true",
+                    },
                 }
             );
 

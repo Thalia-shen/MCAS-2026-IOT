@@ -69,6 +69,9 @@ def ask_gemini(
     params = {
         "model": GEMINI_MODEL,
         "input": message,
+        "generation_config": {
+            "thinking_level": "low",
+        },
     }
 
     if previous_interaction_id:
@@ -78,6 +81,7 @@ def ask_gemini(
 
     interaction = (
         gemini_client.interactions.create(
+            timeout=45,
             **params
         )
     )
